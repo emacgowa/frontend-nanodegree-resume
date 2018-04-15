@@ -109,7 +109,7 @@ a {
 }
 
 .orange {
-  background-color: #fda98c;
+  background-color: #52b7ce;
 }
 
 .orange-text {
@@ -153,8 +153,7 @@ a {
 /* TODO: Replace with image later */
 #header {
   /*background-color: #484848;*/
-  background-image: url(https://images.unsplash.com/photo-1517824967557-278f59f52592?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9477081a0b6ad3e468e4bc840cd30def&auto=format&fit=crop&w=932&q=80);
-  background-size: cover;
+  background-color: #52b7ce;
  /* background-repeat: no-repeat;*/
  /*  */
 /*https://images.unsplash.com/photo-1504464920281-04959fd089db?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fb3e59a741a06d8386acde50cf00fbca&auto=format&fit=crop&w=750&q=80*/
@@ -205,7 +204,7 @@ span {
 }
 
 #footerContacts {
-  background-color: #a08989;
+  background-color: #52b7ce;
 }
 
 /* Media queries to handle various device widths */
