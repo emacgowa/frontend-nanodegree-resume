@@ -1,6 +1,3 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
 
 //creating an object called bio that contains all the important information about me
  var bio = {
@@ -130,45 +127,12 @@ This is empty on purpose! Your code to build the resume will go here.
  work.display();
 
 
-
-// var displayWork = function() {
-// 		for (var job in work.jobs) {
-// 	    $("#workExperience").append(HTMLworkStart);
-// 	    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-// 	    var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title)
-
-// 	    $(".work-entry:last").append(formattedEmployer + formattedTitle);
-
-// 	    // now add all the other work details to the page
-// 	    var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-// 	    $(".work-entry:last").append(formattedDates);
-
-// 	    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-// 	    $(".work-entry:last").append(formattedDescription);
-// 	}
-// }
-
-// Internationalize names
-
-// $("#main").append(internationalizeButton);
-
-// var inName = function(name) {
-// 	name = name.trim().split(" ");
-// 	name[1] = name[1].toUpperCase();
-// 	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
-
-// 	return name[0] + " " + name[1];
-// }
-
-
-// inName(bio.name);
-
 // create a project object to hold my projects
 
 var projects = {
-	"programWork": [
+	"projects": [
 		{
-			"name": "Museum Design",
+			"title": "Museum Design",
 			"start": "2015",
 			"dates": "2015",
 			"location": "Waterloo",
@@ -176,15 +140,15 @@ var projects = {
 			"images": ["images/Gamesroom4-400_medium_1x.JPG"]
 		},
 		{
-			"name": "Pharmacy5in5",
+			"title": "Pharmacy5in5",
 			"start": "2016",
-			"dates": ["2016", "2017", "2018"],
+			"dates": "2016 - present",
 			"location": "Waterloo",
 			"description": "Conducted primary and secondary research to inform design decisions for an e-learning platform for practicing pharmacists across Ontario.",
 			"images": ["images/pharmacy5in5-400_medium_1x.png"]
 		},
 		{
-			"name": "RBC Pathway",
+			"title": "RBC Pathway",
 			"start": "2017",
 			"dates": "2017",
 			"location": "88 Queens Quay",
@@ -193,75 +157,39 @@ var projects = {
 		}
 	],
 	"display": function() {
-		for (var project = 0; project < projects.programWork.length; project++) {
+		for (var project = 0; project < projects.projects.length; project++) {
 			$("#projects").append(HTMLprojectStart);
 
-			var formattedTitle = HTMLprojectTitle.replace("%data%", projects.programWork[project].name);
+			var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
 			$(".project-entry:last").append(formattedTitle);
 
-			var formattedDates = HTMLprojectDates.replace("%data%", projects.programWork[project].dates);
+			var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
 			$(".project-entry:last").append(formattedDates);
 
-			var formattedDescription = HTMLprojectDescription.replace("%data%", projects.programWork[project].description);
+			var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
 			$(".project-entry:last").append(formattedDescription);
 
-			if (projects.programWork[project].images.length > 0) {
-				for (var image in projects.programWork[project].images) {
-					var formattedImage = HTMLprojectImage.replace("%data%", projects.programWork[project].images[image]);
-					$(".project-entry:last").append(formattedImage);
-				}
-			}
+			// if (projects.projects[project].images.length > 0) {
+			// 	for (var image = 0; image < projects.projects[project].images.length; image++) {
+			// 		var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+			// 		$(".project-entry:last").append(formattedImage);
+			// }
+
+			projects.projects[project].images.forEach(function(image) {
+				var formattedImage = HTMLprojectImage.replace("%data%", image);
+				$(".project-entry:last").append(formattedImage);
+			});
+
+				// for (var image in projects.projects[project].images) {
+				// 	var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+				// 	$(".project-entry:last").append(formattedImage);
+				// }
+			
 		}
 	}
 }
 
-// for (var project = 0; project < projects.programWork.length; project++) {
-// 			$("#projects").append(HTMLprojectStart);
-
-// 			var formattedTitle = HTMLprojectTitle.replace("%data%", projects.programWork[project].name);
-// 			$(".project-entry:last").append(formattedTitle);
-
-// 			var formattedDates = HTMLprojectDates.replace("%data%", projects.programWork[project].dates);
-// 			$(".project-entry:last").append(formattedDates);
-
-// 			var formattedDescription = HTMLprojectDescription.replace("%data%", projects.programWork[project].description);
-// 			$(".project-entry:last").append(formattedDescription);
-
-// 			if (projects.programWork[project].images.length > 0) {
-// 				for (var image in projects.programWork[project].images) {
-// 					var formattedImage = HTMLprojectImage.replace("%data%", projects.programWork[project].images[image]);
-// 					$(".project-entry:last").append(formattedImage);
-// 				}
-// 			}
-// 		}
-
 projects.display();
-
-
-// create a new property of the projects object called display
-// projects.display = function() {
-// 	for (var project in projects.programWork) {
-// 		$("#projects").append(HTMLprojectStart);
-
-// 		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.programWork[project].name);
-// 		$(".project-entry:last").append(formattedTitle);
-
-// 		var formattedDates = HTMLprojectDates.replace("%data%", projects.programWork[project].dates);
-// 		$(".project-entry:last").append(formattedDates);
-
-// 		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.programWork[project].description);
-// 		$(".project-entry:last").append(formattedDescription);
-
-// 		if (projects.programWork[project].images.length > 0) {
-// 			for (var image in projects.programWork[project].images) {
-// 				var formattedImage = HTMLprojectImage.replace("%data%", projects.programWork[project].images[image]);
-// 				$(".project-entry:last").append(formattedImage);
-// 			}
-// 		}
-
-
-// 	}
-// }
 
 var education = {
  	"schools": [
@@ -269,7 +197,7 @@ var education = {
 			"name": "University of Waterloo",
 			"location": "Waterloo ON",
 			"degree": "Bachelors",
-			"major": "Knowledge Integration",
+			"majors": ["Knowledge Integration"],
 			"dates": "2012 - 2018"
 
 		}
@@ -294,8 +222,10 @@ var education = {
 	 		var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
 	 		$('.education-entry').append(formattedDates);
 
-	 		var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
-	 		$('.education-entry').append(formattedMajor);
+	 		for (var major = 0; major < education.schools[school].majors.length; major++) {
+		 		var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors[major]);
+		 		$('.education-entry').append(formattedMajor);
+	 		}
 
 
 	 		var formattedLoc = HTMLschoolLocation.replace("%data%", education.schools[school].location);
@@ -330,20 +260,6 @@ $("#mapDiv").append(googleMap);
 // add the footer to the page
 
 bio.displayfooter();
- 			
-	
-
- 		// var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
- 		// $("#footerContacts").append(formattedEmail);
-
- 		// var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
- 		// $("#footerContacts").append(formattedGithub);
-
- 		// var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
- 		// $("#footerContacts").append(formattedTwitter);
-
- 		// var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
- 		// $("#footerContacts").append(formattedLocation);
 		
 
 
