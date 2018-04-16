@@ -56,43 +56,24 @@ This is empty on purpose! Your code to build the resume will go here.
 		 // if there is then add the skills to the page
 
 		 if (bio.skills.length > 0) {
+
 			  $("#header").append(HTMLskillsStart);
-			   var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+
+			  for (var skill = 0; skill < bio.skills.length; skill++) {
+			   var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
 			  $("#skills").append(formattedSkill);
-
-			  formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-			  $("#skills").append(formattedSkill);
-
-			  formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-			  $("#skills").append(formattedSkill);
-
-			  formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-			  $("#skills").append(formattedSkill);
-
-			  formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
-			  $("#skills").append(formattedSkill);
-
-			  formattedSkill = HTMLskills.replace("%data%", bio.skills[5]);
-			  $("#skills").append(formattedSkill);
-
-
+			}
 		 }
  	},
  	"displayfooter": function() {
- 		var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
- 			$("#footerContacts").append(formattedMobile);
-
+ 			var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
  			var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
- 			$("#footerContacts").append(formattedEmail);
-
  			var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
- 			$("#footerContacts").append(formattedGithub);
-
 	 		var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-	 		$("#footerContacts").append(formattedTwitter);
-
 	 		var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-	 		$("#footerContacts").append(formattedLocation);
+
+
+	 		$("#footerContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedTwitter, formattedLocation);
  	}
  };
 
