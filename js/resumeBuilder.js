@@ -77,6 +77,22 @@ This is empty on purpose! Your code to build the resume will go here.
 
 
 		 }
+ 	},
+ 	"displayfooter": function() {
+ 		var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+ 			$("#footerContacts").append(formattedMobile);
+
+ 			var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+ 			$("#footerContacts").append(formattedEmail);
+
+ 			var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+ 			$("#footerContacts").append(formattedGithub);
+
+	 		var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+	 		$("#footerContacts").append(formattedTwitter);
+
+	 		var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+	 		$("#footerContacts").append(formattedLocation);
  	}
  };
 
@@ -218,6 +234,26 @@ var projects = {
 	}
 }
 
+// for (var project = 0; project < projects.programWork.length; project++) {
+// 			$("#projects").append(HTMLprojectStart);
+
+// 			var formattedTitle = HTMLprojectTitle.replace("%data%", projects.programWork[project].name);
+// 			$(".project-entry:last").append(formattedTitle);
+
+// 			var formattedDates = HTMLprojectDates.replace("%data%", projects.programWork[project].dates);
+// 			$(".project-entry:last").append(formattedDates);
+
+// 			var formattedDescription = HTMLprojectDescription.replace("%data%", projects.programWork[project].description);
+// 			$(".project-entry:last").append(formattedDescription);
+
+// 			if (projects.programWork[project].images.length > 0) {
+// 				for (var image in projects.programWork[project].images) {
+// 					var formattedImage = HTMLprojectImage.replace("%data%", projects.programWork[project].images[image]);
+// 					$(".project-entry:last").append(formattedImage);
+// 				}
+// 			}
+// 		}
+
 projects.display();
 
 
@@ -312,20 +348,7 @@ $("#mapDiv").append(googleMap);
 
 // add the footer to the page
 
-			var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
- 			$("#footerContacts").append(formattedMobile);
-
- 			var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
- 			$("#footerContacts").append(formattedEmail);
-
- 			var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
- 			$("#footerContacts").append(formattedGithub);
-
-	 		var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-	 		$("#footerContacts").append(formattedTwitter);
-
-	 		var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-	 		$("#footerContacts").append(formattedLocation);
+bio.displayfooter();
  			
 	
 
